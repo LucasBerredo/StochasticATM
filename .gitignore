@@ -1,5 +1,24 @@
-# Entornos virtuales
+.DS_Store
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.synctex.gz
+*.synctex(busy)
+*.toc
 .venv/
-
-# credenciales
+*.rsls
+*.csv
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+*.jpg
+*.asv
+__pycache__/*
+Python/__pycache__/*
+*.jpeg
+*.xlsx
 credentials.json
+.vscode/
