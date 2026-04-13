@@ -9,7 +9,7 @@
 *.toc
 .venv/
 *.rsls
-*.csv
+
 *.bbl
 *.bcf
 *.blg
