@@ -4,19 +4,19 @@ import pandas as pd
 import numpy as np
 import time
 import os
-from openap import prop
+from openap import fuel
 from datetime import datetime, timedelta, timezone
 
 # --- 1. CONFIGURACIÓN ---
-AEROPUERTOS = ["LEMD", "LEBL", "EGLL", "LFPG", "EDDF"] # Madrid, BCN, Heathrow, París, Frankfurt
-ARCHIVO_SALIDA = "Data/dataset_trayectorias_completas.csv"
+AEROPUERTOS = ["LEBL", "EGLL", "LFPG", "EDDF"] # Madrid, BCN, Heathrow, París, Frankfurt
+ARCHIVO_SALIDA = "Data/dataset_trayectorias_completas_nueva.csv"
 MAX_INTENTOS = 2  # Número máximo de veces que intentará descargar un avión si hay error
 
 # --- 2. GESTOR DE TOKENS OAUTH2 ---
 TOKEN_URL = "https://auth.opensky-network.org/auth/realms/opensky-network/protocol/openid-connect/token"
 TOKEN_REFRESH_MARGIN = 30
 
-class TokenManager:
+"""class TokenManager:
     def __init__(self, client_id, client_secret):
         self.client_id = client_id
         self.client_secret = client_secret
@@ -211,4 +211,6 @@ def generar_dataset_oficial():
         print(f"\n--- SCRIPT FINALIZADO. Total de vuelos listos en CSV: {vuelos_procesados} ---")
 
 if __name__ == "__main__":
-    generar_dataset_oficial()
+    generar_dataset_oficial()"""
+
+print(help(fuel))
