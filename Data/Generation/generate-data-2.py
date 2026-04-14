@@ -4,11 +4,11 @@ import pandas as pd
 import numpy as np
 import time
 import os
-from openap import fuel
+from openap.fuel import FuelFlow
 from datetime import datetime, timedelta, timezone
 
 # --- 1. CONFIGURACIÓN ---
-AEROPUERTOS = ["LEBL", "EGLL", "LFPG", "EDDF"] # Madrid, BCN, Heathrow, París, Frankfurt
+AEROPUERTOS = ["LEBL", "EGLL", "LFPG", "EDDF"] # BCN, Heathrow, París, Frankfurt
 ARCHIVO_SALIDA = "Data/dataset_trayectorias_completas_nueva.csv"
 MAX_INTENTOS = 2  # Número máximo de veces que intentará descargar un avión si hay error
 
@@ -16,7 +16,7 @@ MAX_INTENTOS = 2  # Número máximo de veces que intentará descargar un avión 
 TOKEN_URL = "https://auth.opensky-network.org/auth/realms/opensky-network/protocol/openid-connect/token"
 TOKEN_REFRESH_MARGIN = 30
 
-"""class TokenManager:
+class TokenManager:
     def __init__(self, client_id, client_secret):
         self.client_id = client_id
         self.client_secret = client_secret
@@ -72,9 +72,10 @@ def calculate_physics_and_fuel(df):
     df.fillna({'vel_mps': 0, 'vrate_mps': 0, 'baro_altitude': 0}, inplace=True)
     
     try:
-        fuel_model = prop.Fuel(ac='A320')
+        fuel_model = FuelFlow(ac='A320')
         df['fuel_flow_kgs'] = df.apply(
             lambda r: fuel_model.enroute(
+                mass = 65000,
                 alt = r['baro_altitude'] * 3.28084, 
                 vtas = r['vel_mps'] * 1.94384, 
                 vs = r['vrate_mps'] * 196.85
@@ -211,6 +212,5 @@ def generar_dataset_oficial():
         print(f"\n--- SCRIPT FINALIZADO. Total de vuelos listos en CSV: {vuelos_procesados} ---")
 
 if __name__ == "__main__":
-    generar_dataset_oficial()"""
+    generar_dataset_oficial()
 
-print(help(fuel))
