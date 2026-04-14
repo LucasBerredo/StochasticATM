@@ -118,21 +118,22 @@ What they do:
 
 ## Installation
 
-Recommended: Python virtual environment.
+For installation and environment setup, use `setup.ipynb`.
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install --upgrade pip
-pip install numpy pandas requests matplotlib scipy torch torchsde openap
-```
+Recommended steps:
+
+1. Open `setup.ipynb`.
+2. Run all cells in order.
+3. Verify that the required dependencies are installed before running the other notebooks/scripts.
 
 Notes:
 
-- Torch installation may vary by platform (CPU/CUDA/MPS). If needed, install PyTorch from the official selector first, then install the remaining packages.
-- If a dependency is missing during execution, install it in the same environment.
+- Torch installation may vary by platform (CPU/CUDA/MPS).
+- If a dependency is missing during execution, install it in the same environment used by the notebook.
 
 ## Quick Start
+
+Before running any module, complete the installation workflow in `setup.ipynb`.
 
 ### A) Run data generation
 
