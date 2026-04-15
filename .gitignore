@@ -18,7 +18,6 @@
 *.asv
 __pycache__/*
 Python/__pycache__/*
-*.jpeg
 *.xlsx
 credentials.json
 .vscode/
